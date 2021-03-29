@@ -1,0 +1,42 @@
+{% extends 'auction/base.html' %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'auction/style.css' %}">
+{% block title %}{{ name }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="rw">
+        <div class="auction-heading ml-3">
+            <h1 class="auction-title">{{ name }}</h1>
+        </div>
+        <div class=" flex auction-photos">
+            <div class="gallery-preview">
+                <div class="preloaded-wrap main">
+                    <img id="imageBox" class="img-fluid" src="{{ image.url }}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex buy-box">
+            <div class="listing-submit-wrapper">
+                <div class="listing-detail-price ml-3">
+                    <strong>Current Bid:</strong>
+                    <span class="current-bid-price">Ksh <span class="numeric-value">10,000,000</span></span>
+                    <span class="reserve-status">No Reserve</span>
+                </div>
+                <div class="bid-box ml-3" >
+
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <input type="text" value="">
+                        <button type="button" class=" btn btn-success">Submit Bid</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<p> {{ description }}</p>
+</div>
+
+
+{% endblock %}

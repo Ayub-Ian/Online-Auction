@@ -1,0 +1,32 @@
+{% extends 'auction/base.html' %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'auction/style.css' %}">
+{% block title %}Auction{% endblock %}
+{% block content%}
+
+<div class="container">
+    <div class="row">
+        <div class="col primary auction">
+            <ul class="auction-list">
+            {% for product in product_list %}
+            <li class="auction-item">
+                <figure>
+                     <img src="{{ product.image.url }}">
+                </figure>
+                <a href="{% url 'auction:product' id=product.id %}">{{ product.name }}</a>
+
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+        <div class="col secondary"> auction </div>
+    </div>
+
+
+
+</div>
+
+{% endblock %}
+
+

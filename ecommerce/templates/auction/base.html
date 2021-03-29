@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'auction/style.css' %}">
+</head>
+<body>
+
+<!--Header-->
+<header id="header" class="th-header">
+    <div class="header-section">
+        <!--Top nav-->
+        <div class="top_header1">
+            <div class="container-fluid pt-1">
+                <div class="d-flex align-items-center container">
+                    <a href="" class="hotline">Hotline</a>
+                    <div class="ml-auto">
+                        <div class="position-relative login-user-menu">
+                            <div class="d-sm-inline-block ml-sm-auto">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item mr-0">
+                                        <a class="th1-link" href="./login.html">Login</a>
+                                    </li>
+                                    <li class="list-inline-item mr-0">
+                                        <a class="th1-link" href="./signup.html">Signup</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of top nav-->
+        <div id="logo-nav" class="container-fluid position-relative">
+            <nav class="navbar navbar-expand-lg container">
+                <a class="navbar-brand logo" href="{% url 'auction:home' %}">Auto.Mtaa</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#auctionContent" aria-controls="auctionContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                            <span class="navbar-togg-icon">
+                                <ion-icon name="menu-outline" style="font-size: 28px; --ionicon-stroke-width: 56px;">
+                                </ion-icon>
+
+                            </span>
+                    <div class="close-x">
+                        <ion-icon name="clse-outline"
+                                  style="font-size: 28px; --ionicon-stroke-width: 56px; color: #000000;">
+                        </ion-icon>
+
+                    </div>
+
+                </button>
+
+                <div class="collapse navbar-collapse" id="auctionContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown mr-2">
+                            <a class="nav-link dp-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Auctions
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'auction:home' %}">Live Auctions</a>
+                                <a class="dropdown-item" href="#">Past Auctions</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#">Sell</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'auction:about' %}">How it works</a>
+                        </li>
+
+                    </ul>
+                    <form class="form-inline my-lg-0">
+                        <div class="search-bar">
+                            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn my-sm-0 s-icon" type="submit"><span>
+                                            <ion-icon name="search-outline"
+                                                      style="font-size: 20px; --ionicon-stroke-width: 36px; color: #77838f;">
+                                            </ion-icon>
+                                        </span></button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</header>
+<!--End of Header-->
+{% block content %}
+{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+</script>
+</body>
+</html>
