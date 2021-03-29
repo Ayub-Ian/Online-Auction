@@ -1,0 +1,2 @@
+# Online-Auction
+Online auction aka auto.mtaa is an active project in development stages using tech stack:- Python3 and Django framework. Its aim is to provide users a hustle-free and user-friendly way of bidding on a product and putting their own products to bid. Using Online Auction, users may sell an automobile through bid, or users can buy a product by bidding on an active bidding product. This application would be real-time.
